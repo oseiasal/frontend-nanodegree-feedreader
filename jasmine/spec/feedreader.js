@@ -62,6 +62,7 @@ $(function() {
          */
         it('Menu element is hidden by default', function() {
             let oculto = $('body').hasClass('menu-hidden');
+
             expect(oculto).toBe(true);
         });
 
@@ -85,7 +86,6 @@ $(function() {
 
     /* Write a new test suite named "Initial Entries" */
     describe('Initial Entries', function() {
-
         /* Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
@@ -121,15 +121,16 @@ $(function() {
                     after = $('.feed').html();
                     done();
 
-            });
-        });
+                });
 
+            });
 
         });
 
         it('The content is different', function(done) {
             expect(now != after).toBe(true);
             done();
+
         });
 
     });
