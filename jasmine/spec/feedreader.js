@@ -78,7 +78,6 @@ $(function() {
             expect(menu).not.toBe(false);
             $('.menu-icon-link').click();
             expect(menu).toBe(true);
-            $('.menu-icon-link').click();
 
         });
 
@@ -97,7 +96,7 @@ $(function() {
         });
 
         it('loadFeed is complete!', function(done) {
-            var entry = $('.entry');
+            var entry = $('.feed .entry');
             expect(entry.length).toBeGreaterThan(0);
             done();
         });
