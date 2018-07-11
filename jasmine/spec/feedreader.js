@@ -72,15 +72,11 @@ $(function() {
          * clicked and does it hide when clicked again.
          */
         it('click display/hide menu', function() {
-            let menu = $('body').hasClass('menu-hidden');
-
             $('.menu-icon-link').click();
-            expect(menu).not.toBe(false);
+            expect($('body').hasClass('menu-hidden')).toBe(false);
             $('.menu-icon-link').click();
-            expect(menu).toBe(true);
-
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
-
     });
 
     /* This is a new test suite named "Initial Entries" */
@@ -95,10 +91,9 @@ $(function() {
             loadFeed(0, done);
         });
 
-        it('loadFeed is complete!', function(done) {
+        it('loadFeed is complete!', function() {
             var entry = $('.feed .entry');
             expect(entry.length).toBeGreaterThan(0);
-            done();
         });
     });
     /* This is a new test suite named "New Feed Selection" */
@@ -126,10 +121,8 @@ $(function() {
 
         });
 
-        it('The content is different', function(done) {
-            expect(now != after).toBe(true);
-            done();
-
+        it('The content is different', function() {
+            expect(now).not.toEqual(after);
         });
 
     });
